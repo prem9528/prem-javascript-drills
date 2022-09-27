@@ -17,6 +17,10 @@
 */
 
 const justiceLeague = ['Robin', 'Batman', 'Wonder Woman', 'Flash', 'Aquaman'];
+justiceLeague.shift();
+justiceLeague.push('Green Lantern');
+justiceLeague.unshift(`Superman`);
+console.log(justiceLeague)
 
 /* 
   Problem 2: Middle Earth
@@ -24,7 +28,12 @@ const justiceLeague = ['Robin', 'Batman', 'Wonder Woman', 'Flash', 'Aquaman'];
 */
 
 const middleEarth = ['Frodo', 'Samwise', 'Gandalf', 'Sauraman', 'Treebeard'];
-
+for(let i in middleEarth){
+  if(middleEarth[i].trim() === 'Sauraman'){
+    middleEarth.splice(i,1);
+  }
+}
+console.log(middleEarth)
 /* 
   Problem 3: Numbers
   map over this array, and return a new array of the numbers in it, multiplied by 10
@@ -32,8 +41,8 @@ const middleEarth = ['Frodo', 'Samwise', 'Gandalf', 'Sauraman', 'Treebeard'];
 
 const numbers = [2, 3, 4, 5, 6];
 
-const numsByTen = numbers; // finish this.
-
+const numsByTen = numbers.map((a)=> a*10);
+console.log(numsByTen)
 /* 
   Problem 4: Filter Friends
   Here you're going to create two new arrays. 
@@ -50,8 +59,13 @@ const friends = [
   { name: 'Rachel', gender: 'M' }
 ];
 
-const femaleFriends = friends; // finish this
-const male = friends; // finish this
+const femaleFriends = friends.filter((a) => a.gender === 'F'); 
+const male = friends.filter((a) => a.gender === 'M'); 
+
+console.log(femaleFriends)
+
+console.log(male)
+
 
 module.exports = {
   justiceLeague,
