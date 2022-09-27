@@ -13,7 +13,7 @@
   Add a super hero `Green Lantern` to the end of this List.
   Add a super hero `Superman` to the front of this List.
   Your final array should look like this:
-  ​​​​​[ 'Superman',​​​​​'Batman',​​​​​​​​​​ 'Wonder Woman',​​​​​ 'Flash',​​​​​'Aquaman',​​​​​ 'Green Lantern' ]​​​​​
+       [ 'Superman',​​​​​'Batman',​​​​​​​​​​ 'Wonder Woman',​​​​​ 'Flash',​​​​​'Aquaman',​​​​​ 'Green Lantern' ]​​​​​
 */
 
 const justiceLeague = ['Robin', 'Batman', 'Wonder Woman', 'Flash', 'Aquaman'];
@@ -28,9 +28,9 @@ console.log(justiceLeague)
 */
 
 const middleEarth = ['Frodo', 'Samwise', 'Gandalf', 'Sauraman', 'Treebeard'];
-for(let i in middleEarth){
-  if(middleEarth[i].trim() === 'Sauraman'){
-    middleEarth.splice(i,1);
+for (let i in middleEarth) {
+  if (middleEarth[i].trim() === 'Sauraman') {
+    middleEarth.splice(i, 1);
   }
 }
 console.log(middleEarth)
@@ -41,7 +41,7 @@ console.log(middleEarth)
 
 const numbers = [2, 3, 4, 5, 6];
 
-const numsByTen = numbers.map((a)=> a*10);
+const numsByTen = numbers.map((a) => a * 10);
 console.log(numsByTen)
 /* 
   Problem 4: Filter Friends
@@ -59,8 +59,8 @@ const friends = [
   { name: 'Rachel', gender: 'M' }
 ];
 
-const femaleFriends = friends.filter((a) => a.gender === 'F'); 
-const male = friends.filter((a) => a.gender === 'M'); 
+const femaleFriends = friends.filter((a) => a.gender === 'F');
+const male = friends.filter((a) => a.gender === 'M');
 
 console.log(femaleFriends)
 

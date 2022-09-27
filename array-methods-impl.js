@@ -1,4 +1,4 @@
-const items = [1, 2, 3, 4, 5, 5]; 
+const items = [1, 2, 3, 4, 5, 5];
 /*
   Complete the following functions.
   These functions only need to work with arrays.
@@ -8,35 +8,52 @@ const items = [1, 2, 3, 4, 5, 5];
   **DONT** Use for example. .forEach() to recreate each, and .map() to recreate map etc.
   You CAN use concat, push, pop, etc. but do not use the exact method that you are replicating
 */
-function cb(a){
+function cb(a) {
   console.log(`and indexces are ${a}`)
 }
 function each(elements, cb) {
-  for (let i =0; i< elements.length; i++){
+  for (let i = 0; i < elements.length; i++) {
     console.log(`values are  ${elements[i]}`);
     cb(i)
   }
-  }
+}
 
 each(items, cb)
 
 //<-------------------------------------------------------------------------------------------------->
-
+let x = [];
+function cb1(a) {
+  x.push(a * 10);
+  console.log(x)
+}
 function map(elements, cb) {
-  // Do NOT use .map, to complete this function.
-  // How map works: Map calls a provided callback function once for each element in an array, in order, and functionructs a new array from the res .
-  // Produces a new array of values by mapping each value in list through a transformation function (iteratee).
-  // Return the new array.
+  for (let i of elements) {
+    cb(i)
+  }
+}
+map(items, cb1)
+//<-------------------------------------------------------------------------------------------------->
+let sum = 0;
+function cb2(a, b) {
+  sum += b;
+   console.log(sum+a);
 }
 
 function reduce(elements, cb, startingValue) {
-  // Do NOT use .reduce to complete this function.
-  // How reduce works: A reduce function combines all elements into a single value going from left to right.
-  // Elements will be passed one by one into `cb` along with the `startingValue`.
-  // `startingValue` should be the first argument passed to `cb` and the array element should be the second argument.
-  // `startingValue` is the starting value.  If `startingValue` is undefined then make `elements[0]` the initial value.
+  console.log(startingValue)
+  for (let i of elements) {
+    if (startingValue == 'undefined') {
+      console.log(startingValue+"gjhgjhv")
+      startingValue = elements[0];
+      cb(0, i)
+    } else {
+      cb(startingValue, i)
+    }
+  }  
 }
+reduce(items, cb2)
 
+//<-------------------------------------------------------------------------------------------------->
 function find(elements, cb) {
   // Do NOT use .includes, to complete this function.
   // Look through each value in `elements` and pass each element to `cb`.
@@ -44,12 +61,14 @@ function find(elements, cb) {
   // Return `undefined` if no elements pass the truth test.
 }
 
+//<-------------------------------------------------------------------------------------------------->
 function filter(elements, cb) {
   // Do NOT use .filter, to complete this function.
   // Similar to `find` but you will return an array of all elements that passed the truth test
   // Return an empty array if no elements pass the truth test
 }
 
+//<-------------------------------------------------------------------------------------------------->
 const nestedArray = [1, [2], [[3]], [[[4]]]]; // use this to test 'flatten'
 
 function flatten(elements) {

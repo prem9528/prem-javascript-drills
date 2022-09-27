@@ -26,7 +26,7 @@
   Invoke greetCaller with greet passed into it.
 */
 
-function greet(name){
+function greet(name) {
   console.log(`Hello there, ${name}`)
 };
 
@@ -44,7 +44,7 @@ greetCaller(greet);
 const simpsons = ['Marge', 'Lisa', 'Homer', 'Bart', 'Maggie'];
 
 
-function greet1(name){
+function greet1(name) {
   console.log(`Hello, ${name}`)
 };
 
@@ -59,12 +59,12 @@ simpsons.forEach(greet1)
   When you're done, make sure that you finish the code inside of `every` and ensure it works the way it's supposed to
 */
 
-function greet2(name){
+function greet2(name) {
   console.log(`Hello there, ${name}`)
 };
 
-let every= (simpsons, callback) => {
-  for(let a of simpsons){
+let every = (simpsons, callback) => {
+  for (let a of simpsons) {
     callback(a)
   }
 };
