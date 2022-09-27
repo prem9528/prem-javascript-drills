@@ -1,4 +1,4 @@
-const items = [1, 2, 3, 4, 5, 5]; // use this array to test your code. 
+const items = [1, 2, 3, 4, 5, 5]; 
 /*
   Complete the following functions.
   These functions only need to work with arrays.
@@ -8,14 +8,19 @@ const items = [1, 2, 3, 4, 5, 5]; // use this array to test your code.
   **DONT** Use for example. .forEach() to recreate each, and .map() to recreate map etc.
   You CAN use concat, push, pop, etc. but do not use the exact method that you are replicating
 */
-
-function each(elements, cb) {
-  // Do NOT use forEach to complete this function.
-  // Iterates over a list of elements, yielding each in turn to the `cb` function.
-  // This only needs to work with arrays.
-  // You should also pass the index into `cb` as the second argument
-  // based off http://underscorejs.org/#each
+function cb(a){
+  console.log(`and indexces are ${a}`)
 }
+function each(elements, cb) {
+  for (let i =0; i< elements.length; i++){
+    console.log(`values are  ${elements[i]}`);
+    cb(i)
+  }
+  }
+
+each(items, cb)
+
+//<-------------------------------------------------------------------------------------------------->
 
 function map(elements, cb) {
   // Do NOT use .map, to complete this function.

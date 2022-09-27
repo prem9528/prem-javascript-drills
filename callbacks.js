@@ -27,7 +27,7 @@
 */
 
 function greet(name){
-  console.log(`Hello, ${name}`)
+  console.log(`Hello there, ${name}`)
 };
 
 function greetCaller(callback) {
