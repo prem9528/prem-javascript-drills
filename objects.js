@@ -13,8 +13,6 @@
 
 const student = { name: 'Jonas', age: '12', gender: 'M', role: 'Receiver' };
 const studentKeys = Object.keys(student);
-console.log(studentKeys)
-
 /* 
   Problem 2: Giver Info
   using the same object as above.
@@ -22,7 +20,6 @@ console.log(studentKeys)
 */
 
 const studentValues = Object.values(student);
-console.log(studentValues)
 
 /* 
   Problem 3: Giver Info
