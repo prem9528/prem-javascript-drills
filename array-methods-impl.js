@@ -21,38 +21,32 @@ function each(elements, cb) {
 each(items, cb)
 
 //<-------------------------------------------------------------------------------------------------->
-let x = [];
-function cb1(a) {
-  x.push(a * 10);
-  console.log(x)
-}
+
 function map(elements, cb) {
+  let x = [];
   for (let i of elements) {
-    cb(i)
+    let res = cb(i);
+    x.push(res)
   }
+  return x;
+
 }
-map(items, cb1)
+let z = map(items, (element) => element)
+console.log(z);
 //<-------------------------------------------------------------------------------------------------->
-let sum = 0;
-function cb2(a, b) {
-  sum += b;
-  console.log(sum + a);
-}
+const cb2 = (initialValue, current) => initialValue + current;
 
 function reduce(elements, cb, startingValue) {
+  let a = startingValue;
   for (let i of elements) {
-    if (typeof (startingValue) == 'undefined') {
-      startingValue = 0;
-      cb(0, i)
-    } else {
-      cb(startingValue, i)
-    }
+    let currentValue = i;
+    a = cb(a, currentValue)
   }
+  return a;
 }
-reduce(items, cb2, 10)
-// console.log('when startingValue is undefined ')
-// reduce(items, cb2)
 
+let res = reduce(items, cb2, 0)
+console.log(res)
 //<-------------------------------------------------------------------------------------------------->
 function cb3(a) {
   if (!a) {
@@ -70,25 +64,21 @@ function find(elements, cb) {
 find(items, cb3)
 
 //<-------------------------------------------------------------------------------------------------->
-let arr = [];
-function cb4(a) {
-  if (!a) {
-    console.log([]);
-  } else {
-    arr.push(a);
-    console.log(arr);
-  }
-}
 
 function filter(elements, cb) {
+  let a = [];
   for (let i of elements) {
-    cb(i)
+    let res = cb(i);
+    if (res) {
+      z.push(i);
+    }
   }
-  // Do NOT use .filter, to complete this function.
-  // Similar to `find` but you will return an array of all elements that passed the truth test
-  // Return an empty array if no elements pass the truth test
+  return z;
 }
-filter(items, cb4)
+
+
+let ans = filter(items, (element) => element % 2 == 0);
+console.log(ans);
 
 //<-------------------------------------------------------------------------------------------------->
 const nestedArray = [1, [2], [[3]], [[[4]]]]; // use this to test 'flatten'
