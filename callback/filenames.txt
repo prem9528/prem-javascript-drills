@@ -1,0 +1,3 @@
+sentence3.txt
+sorted3.txt
+uppercase3.txt
