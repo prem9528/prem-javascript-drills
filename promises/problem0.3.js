@@ -11,20 +11,9 @@ const a01 = randomFile.then((data) => {
 }).then(() => {
     const xyz = fs.unlink(`./sample1.json`)
     return xyz
-}).catch((err) => {
-    console.log(err);
-})
-
-const a02 = deletefile.then((files) => {
-    files.forEach((file) => {
-        const deletesinglefile = fs.unlink(`./content/${file}`)
+}).then(()=>{
+    const deletesinglefile = fs.unlink(`./content/rander${a}.json`)
         return deletesinglefile
-
-    })
-
 }).catch((err) => {
     console.log(err);
 })
-
-const finalpromise= Promise.all([a01,a02])
-return finalpromise;
